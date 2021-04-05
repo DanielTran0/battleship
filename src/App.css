@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+button {
+  font-size: 16px;
+  margin: 0 10px;
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: rgb(15, 148, 26);
+  border: none;
+  cursor: pointer;
+}
+
+/*==========
+  game board 
+  ==========*/
+
+.gameBoard > h1 {
+  text-align: center;
+  font-size: 38px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.gameBoard :is(.winPlayer, .winComputer) {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: red;
+}
+
+.winPlayer {
+  color: green !important;
+}
+
+.playerBoards {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.buttonOff {
+  background-color: grey;
+  cursor: auto;
+}
+
+/*============
+  player board 
+  ============*/
+
+.playerBoard {
+  margin: 0 100px;
+}
+
+.playerBoard > h2 {
+  color: red;
+  font-size: 26px;
+  text-align: center;
+}
+
+.playerBoardTitle {
+  color: green !important;
+}
+
+.playerBoard > p {
+  color: red;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.playerRemain {
+  color: green !important;
+}
+
+.singleBoard {
+  display: grid;
+  grid-template-columns: 1fr 15fr;
+  grid-template-rows: 1fr 15fr;
+  width: 600px;
+  height: 600px;
+}
+
+.numberAxis {
+  display: flex;
+}
+
+.letterAxis {
+  display: flex;
+  flex-direction: column;
+}
+
+.axisItem {
+  margin: auto;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  background-color: rgb(101, 196, 252);
+  border: solid thin black;
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: solid thin black;
+}
+
+.gridShip1 {
+  background-color: blue;
+}
+
+.gridShip2 {
+  background-color: olivedrab;
+}
+.gridShip3 {
+  background-color: orchid;
+}
+.gridShip4 {
+  background-color: orange;
+}
+.gridShip5 {
+  background-color: darkred;
+}
+
+.hit {
+  font-size: 30px;
+  background-color: red;
+}
+
+.missHit {
+  position: absolute;
+  font-weight: bold;
+  cursor: default;
+}
+
+.sunk {
+  background-color: gray !important;
+}
+
+.clickable {
+  cursor: crosshair;
+}
+
+.clickable:hover {
+  background-color: red;
+}
+
+@media (max-width: 1440px) {
+  .singleBoard {
+    height: 500px;
+    width: 500px;
+  }
+
+  .gameBoard :is(.winPlayer, .winComputer) {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .playerBoards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .playerBoard {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .playerBoard > h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .playerBoard > p {
+    font-size: 18px;
+  }
+
+  .singleBoard {
+    height: 350px;
+    width: 350px;
+  }
+}
+
+@media (max-width: 360px) {
+  .singleBoard {
+    height: 300px;
+    width: 300px;
+  }
+}
